@@ -101,3 +101,13 @@ If you do not agree with these terms and conditions, then remove the associated 
 All launcher code is available under the GPL-3.0-only license.
 
 The logo and related assets are under the CC BY-SA 4.0 license.
+
+Here are the steps to run
+
+- cmake -Bbuild -DCMAKE_INSTALL_PREFIX=install -DENABLE_LTO=ON -DLauncher_QT_VERSION_MAJOR=6 -DCMAKE_PREFIX_PATH=C:\Qt\6.4.2\msvc2019_64\lib\cmake
+
+- cmake --build build --config Debug -- /p:UseMultiToolTask=true /p:EnforceProcessCountAcrossBuilds=true
+
+- cmake --install build --config Debug
+
+(optional. This is to not store data in %appdata%) - cmake --install build --config Debug --component portable
